@@ -1,5 +1,39 @@
 .headerComp-container {
-    background-color: white;
+    height: 60px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+ul {
+    display: flex;
+    width: 500px;
+    justify-content: space-around;
+}
+
+ul a {
+    text-align: center;
+    color: white;
+    transition: all .2s ease-in-out;
+    margin-right: .2rem;
+}
+
+ul a:hover {
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.home-btn {
+    text-decoration: none;
+    color: white;
+}
+
+.home-btn:hover {
+    text-decoration: none;
+    color: white;
 }
 
 img {

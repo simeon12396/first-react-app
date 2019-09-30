@@ -1,11 +1,13 @@
 import React from 'react';
-import styles from '../css/homePage.css';
-import HeaderComp from '../components/HeaderComp';
+import '../css/homePage.css';
+import HeaderComp from '../components/HeaderComp.js';
+import FooterComp from '../components/FooterComp.js';
 
 const HomePage = () => {
     return(
         <div className="homePage-container">
-            <HeaderComp/>
+            <HeaderComp siteName="TechStore"/>
+            <FooterComp/>
         </div>
     );
 };

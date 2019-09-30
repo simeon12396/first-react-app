@@ -1,23 +1,35 @@
-import React from 'react';
-import {Carousel, CarouselItem} from 'react-bootstrap';
-import styles from '../css/headerComp.css';
+import React, { useState } from 'react';
+import '../css/headerComp.css';
+import { Link } from "react-router-dom";
+const HeaderComp = (props) => {
 
-const HeaderComp = () => {
+    const { siteName } = props;
+
+    let initialState = ['About', 'Login','Register'];
+
+    const navBarObj = initialState.map((value, index) => <Link key={index }to={`${value.toLowerCase()}`}>{value}</Link>);
+
+    const [value, setValue] = useState({
+        name: 'Simeon',
+        age: 20,
+        city: 'Kozlodui'
+    });
+
+    function onclickmethod(e) {
+        e.preventDefault();
+
+        setValue({...value, name:'SImo', city: 'Kozlodui'})
+        
+    console.log(value)
+    };
     return(
         <div className="headerComp-container">
-            <Carousel>
-                <Carousel.Item>
-                    <img className="" src={require('../images/aoc-display.jpg')} alt="First slide - Samsung display" />
-                </Carousel.Item>
-                
-                <Carousel.Item>
-                    <img className="" src={require('../images/philips-display.jpg')} alt="Second slide - Philips display" />
-                </Carousel.Item>
+            <nav className="container">
+                <Link className="home-btn" to="/">{siteName}</Link>
+                <ul className="row">{navBarObj}</ul>
+            </nav>
 
-                <Carousel.Item>
-                    <img className="" src={require('../images/samsung-display.png')} alt="Third slide - AOC isplay" />
-                </Carousel.Item>
-            </Carousel>
+            <a className="btn btn-primary" href="#" role="button" onClick={onclickmethod}>Click me</a>
         </div>
     );
 };
