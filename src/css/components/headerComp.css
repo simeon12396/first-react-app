@@ -1,4 +1,4 @@
-.headerComp-container {
+.header-container {
     height: 60px;
 }
 nav {
@@ -22,8 +22,8 @@ ul a {
 
 ul a:hover {
     text-decoration: none;
-    color: white;
-    border-bottom: 1px solid white;
+    color: #007bff;
+    border-bottom: 1px solid #007bff;
 }
 
 .home-btn {

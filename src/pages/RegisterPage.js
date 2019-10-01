@@ -1,15 +1,17 @@
 import React from 'react';
-import '../css/views/homePage.css';
+import '../css/views/registerPage.css';
 import HeaderComp from '../components/HeaderComp.js';
 import FooterComp from '../components/FooterComp.js';
 
-const HomePage = () => {
+const registerPage = () => {
     return(
-        <div className="home-container">
+        <div className="register-container">
             <HeaderComp siteName="FootballNews"/>
             <FooterComp/>
+
+            <h1>Register</h1>
         </div>
     );
 };
 
-export default HomePage;
+export default registerPage;
