@@ -1,19 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../css/components/footerComp.css';
 import { Link } from "react-router-dom";
 
 const FooterComp = () => {
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        console.log(e)
-    };
-
-    const handleChange = (e) => {
-        console.log(e)
-    };
-
+    
     return(
         <div className="footer-container">
             <div className="container">
@@ -43,8 +33,8 @@ const FooterComp = () => {
                     <div className="col-4">
                         <h5>Subscribe to our newsletter:</h5>
 
-                        <form className="contact-form" onSubmit={handleSubmit}>
-                            <input type="text" placeholder="Email address" onChange={handleChange}></input>
+                        <form className="contact-form">
+                            <input type="text" placeholder="Email address"></input>
                         </form>
                     </div>
                 </div>
