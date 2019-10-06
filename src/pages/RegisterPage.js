@@ -1,10 +1,8 @@
-import React, {useState, useRef} from 'react';
+import React, { useState, useRef } from 'react';
 import '../css/views/registerPage.css';
 import HeaderComp from '../components/HeaderComp.js';
 import FooterComp from '../components/FooterComp.js';
-import { Button, Alert } from 'react-bootstrap';
-import DangerAlertComp from '../components/DangerAlertComp.js';
-import SuccessAlertComp from '../components/SuccessAlertComp.js';
+import { Button } from 'react-bootstrap';
 
 const RegisterPage = () => {
 
@@ -13,18 +11,7 @@ const RegisterPage = () => {
     const passwordRef = useRef(null);
     const confirmPasswordRef = useRef(null);
 
-    const [show, setShow] = useState(false);
-
     const [alertStatusState, setAlertStatusState] = useState('');
-
-    const changeSetShow = () => {
-        setShow(true);
-        console.log('adsdada')
-    };
-
-    const checkAlert = (param1) => {
-        param1 = false;
-    };  
 
     const validation = (data) => {
         const { name, email, password, confirmPassword } = data;
@@ -35,8 +22,6 @@ const RegisterPage = () => {
             return 'danger';
         };
     };
-
-
 
     const handleInput = (e) => {
         const data = {
@@ -60,15 +45,14 @@ const RegisterPage = () => {
         setAlertStatusState(submittedData.alertStatus);
     };
 
-    console.log(show)
-
     return(
         <div className="register-container">
             <HeaderComp siteName="FootballNews"/>
 
             <div className="alert-message">
                 { 
-                    (alertStatusState === 'success') ? (<SuccessAlertComp/>) : (alertStatusState === 'danger') ? (<DangerAlertComp show={show}/>) : (null)
+                    (alertStatusState === 'success') ? alert('Congrats! You are successfuly registered your account!') 
+                    : (alertStatusState === 'danger') ? alert('Something is wront! You got an error!') : (null)
                 }
             </div>
 
@@ -103,14 +87,13 @@ const RegisterPage = () => {
                     </div>
                 </div>
 
-                <Button variant="primary" type="submit" onClick={changeSetShow}>Register</Button>
+                <Button variant="primary" type="submit">Register</Button>
 
                 <span className="privacy">By clicking the Sign Up button, you agree to our <a>Terms & Conditions</a>, and <a>Privacy Policy</a>.</span>
             </form>
             
             <FooterComp/>
         </div>
-            
     );
 };
 
