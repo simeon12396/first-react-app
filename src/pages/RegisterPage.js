@@ -1,66 +1,25 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import '../css/views/registerPage.css';
 import HeaderComp from '../components/HeaderComp.js';
 import FooterComp from '../components/FooterComp.js';
 import { Button } from 'react-bootstrap';
+import useForm from 'react-hook-form';
 
 const RegisterPage = () => {
+    const [loginFormData, setLoginFormData] = useState('');
 
-    let nameRef = useRef(null);
-    let emailRef = useRef(null);
-    let passwordRef = useRef(null);
-    let confirmPasswordRef = useRef(null);
+    const { register, handleSubmit } = useForm();
 
-    const [alertStatusState, setAlertStatusState] = useState('');
-
-    const validation = (data) => {
-        const { name, email, password, confirmPassword } = data;
-
-        if( (name.length !== 0) && (password == confirmPassword) && password.length > 7 ) {
-            localStorage.setItem('name', name);
-            localStorage.setItem('email', email);
-            localStorage.setItem('password', password);
-            
-            return 'success';
-        } else {
-            return 'danger';
-        };
+    const onSubmit = (data) => {
+        setLoginFormData({...loginFormData, ...data});
+        localStorage.setItem('userName', data.userName);
     };
-
-    const handleInput = (e) => {
-        const data = {
-            name: `${nameRef.current.value}`,
-            email: `${emailRef.current.value}`,
-            password: `${passwordRef.current.value}`,
-            confirmPassword: `${confirmPasswordRef.current.value}`
-        };
-
-        return {
-            data,
-            alertStatus: validation(data)
-        };
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        const submittedData = handleInput();
-
-        setAlertStatusState(submittedData.alertStatus);
-    };
+    console.log(loginFormData);
 
     return(
         <div className="register-container">
             <HeaderComp siteName="FootballNews"/>
-
-            <div className="alert-message">
-                { 
-                    (alertStatusState === 'success') ? alert('Congrats! You are successfully registered your account!') 
-                    : (alertStatusState === 'danger') ? alert('Something is wrong! You got an error!') : (null)
-                }
-            </div>
-
-            <form className="register-form" onSubmit={handleSubmit}>
+            <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
                 <h1>Create Account</h1>
 
                 <p>It's free and hardly takes more than 30 seconds.</p>
@@ -69,25 +28,25 @@ const RegisterPage = () => {
                     <div className="input-container">
                         <i className="fa fa-user" aria-hidden="true"></i>
 
-                        <input type="text" ref={nameRef} name="userName" placeholder="Username" onChange={handleInput} required/>
+                        <input type="text" name="userName" placeholder="Username" ref={register} />
                     </div>
 
                     <div className="input-container">
                         <i className="fa fa-paper-plane" aria-hidden="true"></i>
                         
-                        <input type="email" ref={emailRef} name="email" placeholder="Email address" onChange={handleInput} required/>
+                        <input type="email"  name="email" placeholder="Email address" ref={register} />
                     </div>
 
                     <div className="input-container">
                         <i className="fa fa-lock" aria-hidden="true"></i>
                         
-                        <input type="password" ref={passwordRef} name="password" placeholder="Password" onChange={handleInput} required/>
+                        <input type="password" ref name="password" placeholder="Password" ref={register} />
                     </div>
 
                     <div className="input-container">
                         <i className="fa fa-check" aria-hidden="true"></i>
                         
-                        <input type="password" ref={confirmPasswordRef} name="confirmPassword" placeholder="Confirm password"onChange={handleInput} required/>
+                        <input type="password" name="confirmPassword" placeholder="Confirm password" ref={register} />
                     </div>
                 </div>
 

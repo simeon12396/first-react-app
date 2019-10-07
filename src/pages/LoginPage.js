@@ -1,56 +1,45 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../css/views/loginPage.css';
 import HeaderComp from '../components/HeaderComp.js';
 import FooterComp from '../components/FooterComp.js';
 import { Button } from 'react-bootstrap';
+import useForm from 'react-hook-form';
 
 const LoginPage = () => {
-    const [name, setName] = useState('');
+    const { register, handleSubmit } = useForm();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const onSubmit = (data) => {
+        console.log(data)
     };
 
-    const handleNameInput = (e) => {
-        return e.target.value;
-    }; 
-
-    const handlePasswordInput = (e) => {
-        return e.target.value;
-    };
-
-    const handleCheckboxInput = (e) => {
-        return e.target.value;
-    };
-    setName(handleNameInput());
     return(
         <div className="login-container">
             <HeaderComp siteName="FootballNews"/>
-           {name}
-           <form onSubmit={handleSubmit} className="login-form">
+
+           <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
                 <div  className="background">
                     <h3>Login</h3>
                 </div>
 
                 <div className="input-container">
-                    <i className="fa fa-user" aria-hidden="true"></i>
+                    <i className="fa fa-user" aria-hidden="true" />
 
-                    <input type="text" name="userName" placeholder="Username" onChange={ e => handleNameInput(e)} required/>
+                    <input type="text" name="userName" placeholder="Username" ref={register} />
                 </div>
 
                 <div className="input-container">
                     <i className="fa fa-lock" aria-hidden="true"></i>
                         
-                    <input type="password" name="password" placeholder="Password" onChange={handlePasswordInput} required/>
+                    <input type="password" name="password" placeholder="Password" ref={register} />
                 </div>
 
                 <div className="options">
                     <div className="remember-me-cont">
-                        <input type="checkbox" id="remember-me" name="remember" onChange={handleCheckboxInput}/>
+                        <input type="checkbox" id="remember-me" name="remember" ref={register} />
                         <label htmlFor="remember-me">Remember me</label>
                     </div>
 
-                    <a className="forgot-password">Forgot password?</a>
+                    <a className="forgot-password" href="#">Forgot password?</a>
                 </div>
 
                 <div className="div-cont">
