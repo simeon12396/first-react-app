@@ -44,9 +44,6 @@ h5 {
 }
 
 .contact-form input:focus {
-    border-top: 1px solid #007bff;
-    border-left: 1px solid #007bff;
-    border-right: 1px solid #007bff;
     border-radius: 5px;
     padding-left: 12px;
     color: white;

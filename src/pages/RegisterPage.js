@@ -6,10 +6,10 @@ import { Button } from 'react-bootstrap';
 
 const RegisterPage = () => {
 
-    const nameRef = useRef(null);
-    const emailRef = useRef(null);
-    const passwordRef = useRef(null);
-    const confirmPasswordRef = useRef(null);
+    let nameRef = useRef(null);
+    let emailRef = useRef(null);
+    let passwordRef = useRef(null);
+    let confirmPasswordRef = useRef(null);
 
     const [alertStatusState, setAlertStatusState] = useState('');
 
@@ -17,6 +17,10 @@ const RegisterPage = () => {
         const { name, email, password, confirmPassword } = data;
 
         if( (name.length !== 0) && (password == confirmPassword) && password.length > 7 ) {
+            localStorage.setItem('name', name);
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
+            
             return 'success';
         } else {
             return 'danger';
@@ -51,8 +55,8 @@ const RegisterPage = () => {
 
             <div className="alert-message">
                 { 
-                    (alertStatusState === 'success') ? alert('Congrats! You are successfuly registered your account!') 
-                    : (alertStatusState === 'danger') ? alert('Something is wront! You got an error!') : (null)
+                    (alertStatusState === 'success') ? alert('Congrats! You are successfully registered your account!') 
+                    : (alertStatusState === 'danger') ? alert('Something is wrong! You got an error!') : (null)
                 }
             </div>
 
