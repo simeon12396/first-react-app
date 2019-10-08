@@ -9,7 +9,15 @@ const LoginPage = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
-        console.log(data)
+        const name = localStorage.getItem('name');
+        const password = localStorage.getItem('password');
+
+        if(name === data.userName && password === data.password) {
+            localStorage.setItem('isLoggedIn', true);
+            alert('Login successful!')
+        } else {
+            alert('Login is unsuccessful. Please try again.');
+        }
     };
 
     return(
@@ -24,13 +32,13 @@ const LoginPage = () => {
                 <div className="input-container">
                     <i className="fa fa-user" aria-hidden="true" />
 
-                    <input type="text" name="userName" placeholder="Username" ref={register} />
+                    <input type="text" name="userName" placeholder="Username" ref={register} required/>
                 </div>
 
                 <div className="input-container">
                     <i className="fa fa-lock" aria-hidden="true"></i>
                         
-                    <input type="password" name="password" placeholder="Password" ref={register} />
+                    <input type="password" name="password" placeholder="Password" ref={register} required/>
                 </div>
 
                 <div className="options">

@@ -6,19 +6,29 @@ import { Button } from 'react-bootstrap';
 import useForm from 'react-hook-form';
 
 const RegisterPage = () => {
-    const [loginFormData, setLoginFormData] = useState('');
+    const [formState, setFormState] = useState({});
 
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = (data) => {
-        setLoginFormData({...loginFormData, ...data});
-        localStorage.setItem('userName', data.userName);
-    };
-    console.log(loginFormData);
 
+        if(data.password === data.confirmPassword) {
+
+            setFormState({...formState, ...data});
+
+            localStorage.setItem('name', data.userName);
+            localStorage.setItem('password', data.password);
+
+            alert('Congratulations! You have been successfully registered!');
+        } else {
+
+            alert('Your password and confirmation password do not match.');
+        };
+    };
+    
     return(
         <div className="register-container">
-            <HeaderComp siteName="FootballNews"/>
+            <HeaderComp siteName="FootballNews" isLoggedIn={localStorage.getItem('isLoggedIn')}/>
             <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
                 <h1>Create Account</h1>
 
@@ -28,25 +38,46 @@ const RegisterPage = () => {
                     <div className="input-container">
                         <i className="fa fa-user" aria-hidden="true"></i>
 
-                        <input type="text" name="userName" placeholder="Username" ref={register} />
+                        <input type="text" name="userName" placeholder="Username" ref={register({minLength: 3})} required/>
+
+                        {errors.userName && errors.userName.type === 'minLength' && (
+                            <div className="field-alert">
+                                <i className="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                <span>This field required minimum length of 3 characters</span>
+                            </div>)
+                        }
                     </div>
 
                     <div className="input-container">
                         <i className="fa fa-paper-plane" aria-hidden="true"></i>
                         
-                        <input type="email"  name="email" placeholder="Email address" ref={register} />
+                        <input type="email"  name="email" placeholder="Email address" ref={register} required/>
                     </div>
 
                     <div className="input-container">
                         <i className="fa fa-lock" aria-hidden="true"></i>
                         
-                        <input type="password" ref name="password" placeholder="Password" ref={register} />
+                        <input type="password" ref name="password" placeholder="Password" ref={register({minLength: 6, maxLength: 20})} required/>
+
+                        {errors.password && errors.password.type === 'minLength' && (
+                            <div className="field-alert">
+                                <i className="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                <span>This field required minimum length of 6 characters</span>
+                            </div>)
+                        }
+
+                        {errors.password && errors.password.type === 'maxLength' && (
+                            <div className="field-alert">
+                                <i className="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                <span>This field required minimum length of 20 characters</span>
+                            </div>)
+                        }
                     </div>
 
                     <div className="input-container">
                         <i className="fa fa-check" aria-hidden="true"></i>
                         
-                        <input type="password" name="confirmPassword" placeholder="Confirm password" ref={register} />
+                        <input type="password" name="confirmPassword" placeholder="Confirm password" ref={register} required/>
                     </div>
                 </div>
 

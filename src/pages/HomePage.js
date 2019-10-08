@@ -6,7 +6,7 @@ import FooterComp from '../components/FooterComp.js';
 const HomePage = () => {
     return(
         <div className="home-container">
-            <HeaderComp siteName="FootballNews"/>
+            <HeaderComp siteName="FootballNews" isLoggedIn={localStorage.getItem('isLoggedIn')}/>
             <FooterComp/>
         </div>
     );
