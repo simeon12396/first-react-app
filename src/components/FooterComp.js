@@ -1,9 +1,20 @@
 import React from 'react';
 import '../css/components/footerComp.css';
 import { Link } from "react-router-dom";
+import useForm from 'react-hook-form';
 
 const FooterComp = () => {
-    
+
+    const { register, handleSubmit } = useForm();
+
+    const subscribers = [];
+
+    const onSubmit = (data) => {
+         const subscriber = data.email;
+         subscribers.push(subscriber);
+        localStorage.setItem('subscribers', JSON.stringify(subscribers));
+    };
+
     return(
         <div className="footer-container">
             <div className="container">
@@ -11,8 +22,6 @@ const FooterComp = () => {
                     <ul className="col-4">
                         <Link to="/">Home</Link>
                         <Link to="/news">News</Link>
-                        <Link to="/login">Login</Link>
-                        <Link to="/register">Register</Link>
                     </ul>
 
                     <div className="social-media col-2">
@@ -33,8 +42,8 @@ const FooterComp = () => {
                     <div className="col-4">
                         <h5>Subscribe to our newsletter:</h5>
 
-                        <form className="contact-form">
-                            <input type="text" placeholder="Email address"></input>
+                        <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
+                            <input type="email" name="email" placeholder="Email address" ref={register} required></input>
                         </form>
                     </div>
                 </div>

@@ -7,7 +7,7 @@ const NewsPage = () => {
 
     return(
         <div className="news-container">
-            <HeaderComp siteName="FootballNews" isLoggedIn={localStorage.getItem('isLoggedIn')}/>
+            <HeaderComp siteName="AllAboutNews" isLoggedIn={localStorage.getItem('isLoggedIn')}/>
             
             <FooterComp/>
         </div>

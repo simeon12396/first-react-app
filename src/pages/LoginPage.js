@@ -22,7 +22,7 @@ const LoginPage = () => {
 
     return(
         <div className="login-container">
-            <HeaderComp siteName="FootballNews"/>
+            <HeaderComp siteName="AllAboutNews"/>
 
            <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
                 <div  className="background">

@@ -21,10 +21,10 @@ const HeaderComp = (props) => {
                     (
                         <ul className="row">
                             <Link to="/news">News</Link>
-                            <Link>
+                            <Link to="/">
                                 <i className="fa fa-user-circle" aria-hidden="true"></i>
                             </Link>
-                            <Link onClick={isLoggedOut}>Log out</Link>
+                            <Link onClick={isLoggedOut} to="/">Log out</Link>
                         </ul>
                     ) : 
                     (

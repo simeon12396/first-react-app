@@ -28,7 +28,8 @@ const RegisterPage = () => {
     
     return(
         <div className="register-container">
-            <HeaderComp siteName="FootballNews" isLoggedIn={localStorage.getItem('isLoggedIn')}/>
+            <HeaderComp siteName="AllAboutNews" isLoggedIn={localStorage.getItem('isLoggedIn')}/>
+            
             <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
                 <h1>Create Account</h1>
 
