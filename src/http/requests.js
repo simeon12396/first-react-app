@@ -13,7 +13,7 @@ const useGetNews = () => {
         .then(response => response.json())
         .then(news => {
             const leadingNews = news.articles.slice(0, 8);
-            const dailyNews = news.articles.slice(8);
+            const dailyNews = news.articles.slice(8, 16);
             setLeadingNews(leadingNews);
             setDailyNews(dailyNews);
         })
