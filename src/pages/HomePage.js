@@ -9,6 +9,7 @@ import useGetNews from '../http/requests.js';
 const HomePage = () => {
     const [leadingNews, dailyNews] = useGetNews();
 
+    console.log(leadingNews)
     if(dailyNews.length > 0) {
         return(
             <div className="home-container">
