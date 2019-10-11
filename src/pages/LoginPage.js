@@ -24,36 +24,38 @@ const LoginPage = () => {
         <div className="login-container">
             <HeaderComp siteName="AllAboutNews"/>
 
-           <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
-                <div  className="background">
-                    <h3>Login</h3>
-                </div>
+           <main className="container">
+                <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
+                        <div  className="background">
+                            <h3>Login</h3>
+                        </div>
 
-                <div className="input-container">
-                    <i className="fa fa-user" aria-hidden="true" />
+                        <div className="input-container">
+                            <i className="fa fa-user" aria-hidden="true" />
 
-                    <input type="text" name="userName" placeholder="Username" ref={register} required/>
-                </div>
+                            <input type="text" name="userName" placeholder="Username" ref={register} required/>
+                        </div>
 
-                <div className="input-container">
-                    <i className="fa fa-lock" aria-hidden="true"></i>
-                        
-                    <input type="password" name="password" placeholder="Password" ref={register} required/>
-                </div>
+                        <div className="input-container">
+                            <i className="fa fa-lock" aria-hidden="true"></i>
+                                
+                            <input type="password" name="password" placeholder="Password" ref={register} required/>
+                        </div>
 
-                <div className="options">
-                    <div className="remember-me-cont">
-                        <input type="checkbox" id="remember-me" name="remember" ref={register} />
-                        <label htmlFor="remember-me">Remember me</label>
-                    </div>
+                        <div className="options">
+                            <div className="remember-me-cont">
+                                <input type="checkbox" id="remember-me" name="remember" ref={register} />
+                                <label htmlFor="remember-me">Remember me</label>
+                            </div>
 
-                    <a className="forgot-password" href="#">Forgot password?</a>
-                </div>
+                            <a className="forgot-password" href="#">Forgot password?</a>
+                        </div>
 
-                <div className="div-cont">
-                    <Button variant="primary" type="submit">Register</Button>
-                </div>
-           </form>
+                        <div className="div-cont">
+                            <Button variant="primary" type="submit">Register</Button>
+                        </div>
+                </form>
+           </main>
 
             <FooterComp/>
         </div>

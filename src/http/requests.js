@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 
 const useGetNews = () => {
     const newsAPIKey = 'apiKey=5e264f0a6df548b392cca93633c2b6e5';

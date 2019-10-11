@@ -7,6 +7,8 @@ import HomePage from './pages/HomePage';
 import NewsPage from './pages/NewsPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import SingularDailyNews from './pages/SingularDailyNews';
+import SingularLeadingNews from './pages/SingularLeadingNews';
 
 const App = () => {
     return(
@@ -15,6 +17,8 @@ const App = () => {
             <Route path="/news" component={NewsPage}/>
             <Route path="/login" component={LoginPage}/>
             <Route path="/register" component={RegisterPage}/>
+            <Route path="/singular-daily-news/:id" component={SingularDailyNews}/>
+            <Route path="/singular-leading-news/:id" component={SingularLeadingNews}/>
         </Router>
     );
 };

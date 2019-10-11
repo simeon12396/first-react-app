@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 import "../css/components/sliderComp.css";
 
 const SliderComp = (props) => {
-
+    
     const leadingNews = props.leadingNews.map((article, index) => {
         return (
-            <Link to="#" key={index} className="slide">
+            <Link to={`/singular-leading-news/${index+1}`} key={index} className="slide">
                 <img src={article.urlToImage}/>
             </Link>
         );

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../css/views/newsPage.css';
 import HeaderComp from '../components/HeaderComp.js';
 import FooterComp from '../components/FooterComp.js';
@@ -9,6 +9,10 @@ const NewsPage = () => {
         <div className="news-container">
             <HeaderComp siteName="AllAboutNews" isLoggedIn={localStorage.getItem('isLoggedIn')}/>
             
+            <main className="container">
+
+            </main>
+
             <FooterComp/>
         </div>
     );

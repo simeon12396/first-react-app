@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import '../css/views/homePage.css';
 import HeaderComp from '../components/HeaderComp.js';
 import FooterComp from '../components/FooterComp.js';
@@ -9,15 +9,16 @@ import useGetNews from '../http/requests.js';
 const HomePage = () => {
     const [leadingNews, dailyNews] = useGetNews();
 
-    console.log(leadingNews)
     if(dailyNews.length > 0) {
         return(
             <div className="home-container">
                 <HeaderComp siteName="AllAboutNews" isLoggedIn={localStorage.getItem('isLoggedIn')}/>
 
-                <SliderComp leadingNews={leadingNews}/>
+                <main className="container">
+                    <SliderComp leadingNews={leadingNews}/>
                 
-                <DailyNews dailyNews={dailyNews}/>
+                    <DailyNews dailyNews={dailyNews}/>
+                </main>
 
                 <FooterComp/>
             </div>

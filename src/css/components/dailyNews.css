@@ -24,9 +24,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: lightgray;
+    background: black;;
     opacity: 0;
-    transition: all .2s ease-in-out;
+    transition: all .3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay .title {
+    font-size: 15px;
+    width: 70%;
+    margin-bottom: 10px;
 }
 
 .overlay span,
@@ -35,8 +45,7 @@
 }
 
 .overlay:hover {
-    opacity: 1;
-    border-radius: 20px;
+    opacity: .6;
 }
 
 .overlay:hover img {
