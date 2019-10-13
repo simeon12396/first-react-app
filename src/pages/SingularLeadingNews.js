@@ -2,7 +2,7 @@ import React from 'react';
 import useGetNews from '../http/requests';
 import HeaderComp from '../components/HeaderComp';
 import FooterComp from '../components/FooterComp';
-import '../css/views/singularLeadingNews.css';
+import '../scss/views/singularNewsStyles.scss';
 
 const SingularLeadingNews = (props) => {
     const [leadingNews, dailyNews] = useGetNews();

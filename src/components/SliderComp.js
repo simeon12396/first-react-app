@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
-import "../css/components/sliderComp.css";
+import "../scss/components/sliderComp.scss";
 
 const SliderComp = (props) => {
     

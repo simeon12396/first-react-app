@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/components/footerComp.css';
+import '../scss/components/footerComp.scss';
 import { Link } from "react-router-dom";
 import useForm from 'react-hook-form';
 
@@ -21,7 +21,8 @@ const FooterComp = () => {
                 <div className="row justify-content-between">
                     <ul className="col-4">
                         <Link to="/">Home</Link>
-                        <Link to="/news">News</Link>
+                        <Link to="/">Login</Link>
+                        <Link to="/">Register</Link>
                     </ul>
 
                     <div className="social-media col-2">

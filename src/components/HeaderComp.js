@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/components/headerComp.css';
+import '../scss/components/headerComp.scss';
 import { Link } from "react-router-dom";
 
 const HeaderComp = (props) => {
@@ -20,7 +20,6 @@ const HeaderComp = (props) => {
                     (isLoggedIn) ? 
                     (
                         <ul className="row">
-                            <Link to="/news">News</Link>
                             <Link to="/">
                                 <i className="fa fa-user-circle" aria-hidden="true"></i>
                             </Link>
@@ -29,7 +28,6 @@ const HeaderComp = (props) => {
                     ) : 
                     (
                         <ul className="row">
-                            <Link to="/news">News</Link>
                             <Link to="/login">Login</Link>
                             <Link to="/register">Register</Link>
                         </ul>

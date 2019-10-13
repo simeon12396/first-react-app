@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/views/registerPage.css';
+import '../scss/views/registerPage.scss';
 import HeaderComp from '../components/HeaderComp.js';
 import FooterComp from '../components/FooterComp.js';
 import { Button } from 'react-bootstrap';

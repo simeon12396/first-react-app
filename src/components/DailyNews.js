@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import '../css/components/dailyNews.css';
+import '../scss/components/dailyNews.scss';
 
 const DailyNews = (props) => {
     

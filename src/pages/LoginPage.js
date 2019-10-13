@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/views/loginPage.css';
+import '../scss/views/loginPage.scss';
 import HeaderComp from '../components/HeaderComp.js';
 import FooterComp from '../components/FooterComp.js';
 import { Button } from 'react-bootstrap';

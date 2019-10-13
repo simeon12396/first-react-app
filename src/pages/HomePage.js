@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/views/homePage.css';
+import '../scss/views/homePage.scss';
 import HeaderComp from '../components/HeaderComp.js';
 import FooterComp from '../components/FooterComp.js';
 import SliderComp from '../components/SliderComp.js';
