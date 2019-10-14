@@ -1,22 +1,29 @@
 .footer-container {
-    margin-top: 30px;
+    width: 100%;
     color: white;
 
-    ul {
-        height: 30px;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
+    .row {
+        margin-top: 20px;
+        justify-content: center;
 
-        a {
-            text-align: left;
-            transition: all .2s ease-in-out;
-
-            &:hover {
-                text-decoration: none;
-                color: #007bff;
-                border-bottom: none;
+        ul {
+            height: 30px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+    
+            a {
+                text-align: left;
+                transition: all .2s ease-in-out;
+                color: white;
+                margin-right: 10px;
+    
+                &:hover {
+                    text-decoration: none;
+                    color: #007bff;
+                    border-bottom: none;
+                }
             }
         }
     }
@@ -71,33 +78,44 @@
             }
         }
     }
+    
+    .contact-form-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
 
-    h5 {
-        width: 80%;
-    }
-
-    .contact-form {
-        width: 60%;
-
-        input {
-            background-color: transparent;
-            border-bottom: 1px solid #007bff;
-            -webkit-transition: all .2s ease-in-out;
-            transition: all .2s ease-in-out;
-
-            &:focus {
-                border-radius: 5px;
-                padding-left: 12px;
-                color: white;
-                font-style: italic;
+        form {
+            width: 70%;
+            
+            input {
+                background-color: transparent;
+                border-bottom: 1px solid #007bff;
+                -webkit-transition: all .2s ease-in-out;
+                transition: all .2s ease-in-out;
+                width: inherit;
+    
+                &:focus {
+                    border-radius: 5px;
+                    padding-left: 12px;
+                    color: white;
+                    font-style: italic;
+                }
             }
         }
     }
 
     .copyright {
         text-align: center;
-        margin-bottom: 5px;
-        font-size: .7rem;
+        font-size: .7rem;  
+        margin-bottom: 0;
     }
 }
+
+
+@media only screen and (max-width: 991px){
+    .footer-container .row ul {
+        justify-content: center;
+    }
+}
+
 

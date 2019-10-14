@@ -6,7 +6,7 @@ const DailyNews = (props) => {
     
     const dailyNews = props.dailyNews.map((article, index) => {
         return (
-            <Link key={index} className="grid-item" to={`/singular-daily-news/${index+1}`}>
+            <Link key={index} className="col-sm-6 col-md-6 col-lg-4 col-xl-3 box-news" to={`/singular-daily-news/${index+1}`}>
                 <div className="overlay">
                     <span className="title">{article.title}</span>
                     <div className="see-more">
@@ -21,7 +21,7 @@ const DailyNews = (props) => {
     });
 
     return(
-        <div className="daily-news container">
+        <div className="daily-news container row">
             {dailyNews}
         </div>
     )

@@ -14,13 +14,11 @@ const HomePage = () => {
             <div className="home-container">
                 <HeaderComp siteName="AllAboutNews" isLoggedIn={localStorage.getItem('isLoggedIn')}/>
 
-                <main className="container">
-                    <SliderComp leadingNews={leadingNews}/>
+                <SliderComp leadingNews={leadingNews}/>
                 
-                    <DailyNews dailyNews={dailyNews}/>
-                </main>
+                <DailyNews dailyNews={dailyNews}/>
 
-                <FooterComp/>
+                <FooterComp isLoggedIn={localStorage.getItem('isLoggedIn')}/>
             </div>
         );
     } else {

@@ -2,17 +2,16 @@
     background: #0F2027;  /* fallback for old browsers */  /* Chrome 10-25, Safari 5.1-6 */
     background: -webkit-gradient(linear, left top, right top, from(#2C5364), color-stop(#203A43), to(#0F2027));
     background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    height: 100vh;
 
     main {
         display: flex;
         align-items: center;
         justify-content: center;
-
+        height: 80vh;
+        
         .register-form {
             background-color: white;
-            width: 40%;
-            height: 500px;
+            width: 60%;
             -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
                     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
             border-radius: 15px;
@@ -89,23 +88,34 @@
                         font-size: 1.7em;
                         left: 2px;
                     }
+                }
+            }
 
-                    .privacy {
-                        margin: 0 auto;
-                        width: 60%;
-                        text-align: center;
-                    }
+            .btn-primary {
+                margin: 15px 0;
+            }
 
-                    .privacy a {
-                        color: #007bff !important;
+            .privacy {
+                margin: 0 auto;
+                width: 85%;
+                text-align: center;
+            }
 
-                        &:hover {
-                            cursor: pointer;
-                            text-decoration: underline !important;
-                        }
-                    }
+            .privacy a {
+                color: #007bff !important;
+
+                &:hover {
+                    cursor: pointer;
+                    text-decoration: underline !important;
                 }
             }
         }
+    }
+}
+
+
+@media only screen and (max-width: 991px) {
+    .register-container main .register-form {
+        width: 85%;
     }
 }

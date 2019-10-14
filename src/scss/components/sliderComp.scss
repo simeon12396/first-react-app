@@ -13,3 +13,22 @@
         }
     }
 }
+
+@media only screen and (max-width: 576px) {
+    .slider .slide img {
+        width: 320px;
+    }
+}
+
+@media only screen and (min-width: 577px ) and (max-width: 767px) {
+    .slider .slide img {
+        width: 500px;
+    }
+}
+
+
+@media only screen and (min-width: 769px) and (max-width: 992px){
+    .slider .slide img {
+        width: 340px;
+    }
+}
