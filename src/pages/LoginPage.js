@@ -5,7 +5,7 @@ import FooterComp from '../components/FooterComp.js';
 import { Button } from 'react-bootstrap';
 import useForm from 'react-hook-form';
 
-const LoginPage = () => {
+const LoginPage = (props) => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
@@ -14,10 +14,14 @@ const LoginPage = () => {
 
         if(name === data.userName && password === data.password) {
             localStorage.setItem('isLoggedIn', true);
-            alert('Login successful!')
+            alert('Login successful!');
+
+            setTimeout(() => {
+                props.history.push('/');
+            }, 1000);       
         } else {
             alert('Login is unsuccessful. Please try again.');
-        }
+        };
     };
 
     return(

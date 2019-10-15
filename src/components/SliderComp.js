@@ -10,6 +10,11 @@ const SliderComp = (props) => {
     const leadingNews = props.leadingNews.map((article, index) => {
         return (
             <Link to={`/singular-leading-news/${index+1}`} key={index} className="slide">
+
+                <div className="title-wrapper">
+                    <span className="title">{article.title}</span>
+                </div>
+
                 <img src={article.urlToImage}/>
             </Link>
         );
