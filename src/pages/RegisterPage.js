@@ -5,7 +5,7 @@ import FooterComp from '../components/FooterComp.js';
 import { Button } from 'react-bootstrap';
 import useForm from 'react-hook-form';
 
-const RegisterPage = () => {
+const RegisterPage = (props) => {
     const [formState, setFormState] = useState({});
 
     const { register, handleSubmit, errors } = useForm();
@@ -20,6 +20,10 @@ const RegisterPage = () => {
             localStorage.setItem('password', data.password);
 
             alert('Congratulations! You have been successfully registered!');
+
+            setTimeout(() => {
+                props.history.push('/login');
+            }, 1000);
         } else {
 
             alert('Your password and confirmation password do not match.');
