@@ -5,10 +5,16 @@
         display: flex;
         justify-content: space-between;
         padding-top: 1rem;
-        
-        .hamburger-menu {
+        position: relative;
+
+        .hamburger-mobile {
             position: absolute;
             display: none;
+        }
+
+        .nav-mobile {
+            display: none;
+            position: absolute;
         }
 
         .home-btn {
@@ -21,7 +27,7 @@
             }
         }
 
-        ul {
+        .main-menu {
             display: flex;
             width: 500px;
             justify-content: space-evenly;
@@ -38,6 +44,50 @@
                     border-bottom: 1px solid #007bff;
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-container nav {
+
+        .main-menu {
+            opacity: 0;
+            display: none;
+        }
+
+        .hamburger-mobile {
+            opacity: 1;
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            display: block;
+
+            .fa {
+                font-size: 30px;
+            }
+
+            .fa-times {
+                display: none;
+            }
+        }
+
+        .changeHamburgerMobile .fa-times {
+            display: block;
+        }
+
+        .changeHamburgerMobile .fa-bars {
+            display: none;
+        }
+
+        .nav-mobile {
+            position: absolute;
+            top: 0;
+            right: 30px;
+        }
+
+        .changeNavMobile {
+            display: block;
         }
     }
 }
