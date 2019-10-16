@@ -24,6 +24,7 @@ const RegisterPage = (props) => {
             setTimeout(() => {
                 props.history.push('/login');
             }, 1000);
+            
         } else {
 
             alert('Your password and confirmation password do not match.');

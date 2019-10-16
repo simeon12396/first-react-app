@@ -8,12 +8,10 @@ const FooterComp = (props) => {
 
     const { register, handleSubmit } = useForm();
 
-    const subscribers = [];
-
     const onSubmit = (data) => {
          const subscriber = data.email;
 
-         localStorage.setItem('subscribers', JSON.stringify(subscribers));
+         localStorage.setItem('subscribers', JSON.stringify(subscriber));
     };
 
     return(
