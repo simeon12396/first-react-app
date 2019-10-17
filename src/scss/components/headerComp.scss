@@ -62,7 +62,8 @@
             top: 20px;
             right: 15px;
             display: block;
-
+            color: white;
+            
             .fa {
                 font-size: 30px;
             }
@@ -72,22 +73,33 @@
             }
         }
 
-        .changeHamburgerMobile .fa-times {
-            display: block;
-        }
-
-        .changeHamburgerMobile .fa-bars {
+        .nav-mobile {
             display: none;
         }
 
-        .nav-mobile {
-            position: absolute;
-            top: 0;
-            right: 30px;
+        .changeHamburgerMobile{
+            color: white;
+
+            .fa-times {
+                display: block
+            }
+
+            .fa-bars {
+                display: none;
+            }
         }
 
         .changeNavMobile {
             display: block;
+            position: absolute;
+            bottom: -5px;
+            right: 45px; 
+            margin-bottom: 0;
+
+            a {
+                margin-right: 10px;
+                color: white;
+            }
         }
     }
 }

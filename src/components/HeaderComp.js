@@ -59,7 +59,7 @@ const HeaderComp = (props) => {
                                 <Link to="/register">Register</Link>
                             </ul>
 
-                            <div className="hamburger-mobile">
+                            <div className="hamburger-mobile" onClick={handleHamburgerMenu}>
                                 <i className="fa fa-bars" aria-hidden="true"></i>
 
                                 <i className="fa fa-times" aria-hidden="true"></i>
