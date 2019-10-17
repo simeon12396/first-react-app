@@ -23,7 +23,7 @@ const RegisterPage = (props) => {
 
             setTimeout(() => {
                 props.history.push('/login');
-            }, 1000);
+            }, 0000);
             
         } else {
 

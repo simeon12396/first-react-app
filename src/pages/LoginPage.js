@@ -18,7 +18,7 @@ const LoginPage = (props) => {
 
             setTimeout(() => {
                 props.history.push('/');
-            }, 1000); 
+            }, 0000); 
                   
         } else {
             alert('Login is unsuccessful. Please try again.');
