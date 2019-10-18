@@ -16,10 +16,7 @@ const LoginPage = (props) => {
             localStorage.setItem('isLoggedIn', true);
             alert('Login successful!');
 
-            setTimeout(() => {
-                props.history.push('/');
-            }, 0000); 
-                  
+            props.history.push('/');
         } else {
             alert('Login is unsuccessful. Please try again.');
         };
