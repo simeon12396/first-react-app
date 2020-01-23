@@ -52,7 +52,7 @@ const SingularLeadingNews = (props) => {
                     </div>
                 </main>
 
-                <FooterComp/>
+                <FooterComp isLoggedIn={localStorage.getItem('isLoggedIn')}/>
             </div>
         )
     } else {

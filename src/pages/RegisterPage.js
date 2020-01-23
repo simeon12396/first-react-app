@@ -23,7 +23,6 @@ const RegisterPage = (props) => {
 
             props.history.push('/login');
         } else {
-
             alert('Your password and confirmation password do not match.');
         };
     };
